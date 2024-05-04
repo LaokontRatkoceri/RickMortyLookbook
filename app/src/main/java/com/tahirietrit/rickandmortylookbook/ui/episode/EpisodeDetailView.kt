@@ -1,11 +1,11 @@
-package com.tahirietrit.rickandmortylookbook.ui.detail
+package com.tahirietrit.rickandmortylookbook.ui.episode
 
 import Episode
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.tahirietrit.rickandmortylookbook.data.model.Character
-import com.tahirietrit.rickandmortylookbook.data.model.CharactersResponse
-import com.tahirietrit.rickandmortylookbook.data.model.SingleCharacterResopnese
+import com.tahirietrit.rickandmortylookbook.data.model.Episodes
+import com.tahirietrit.rickandmortylookbook.data.model.EpisodesRes
 import com.tahirietrit.rickandmortylookbook.domain.CharactersRepository
 import retrofit2.Call
 import retrofit2.Response
@@ -13,8 +13,12 @@ import retrofit2.Response
 class EpisodeDetailView : ViewModel() {
     private val repository = CharactersRepository()
     val episodeData = MutableLiveData<Episode>()
-    val characterData = MutableLiveData<List<Character>>()
+    val episodesList = MutableLiveData<List<EpisodesRes>>()
 
+    val characterData = MutableLiveData<List<Character>>()
+init {
+    getAllEpisodes()
+}
 
     fun getEpisodById(episodeId: String){
         repository.service.Episode(episodeId).enqueue(object : retrofit2.Callback<Episode> {
@@ -56,6 +60,22 @@ class EpisodeDetailView : ViewModel() {
                 t.printStackTrace()
             }
 
+
+        })
+    }
+    fun getAllEpisodes(){
+        repository.service.getAllEpisodes().enqueue(object : retrofit2.Callback<Episodes> {
+            override fun onResponse(
+                call: Call<Episodes>,
+                response: Response<Episodes>
+            ) {
+                episodesList.postValue(response.body()!!.results)
+
+            }
+
+            override fun onFailure(call: Call<Episodes>, t: Throwable) {
+                t.printStackTrace()
+            }
 
         })
     }

@@ -1,10 +1,9 @@
-package com.tahirietrit.rickandmortylookbook.ui.detail
+package com.tahirietrit.rickandmortylookbook.ui.episode
 
 import Episode
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.tahirietrit.rickandmortylookbook.data.model.Character
 import com.tahirietrit.rickandmortylookbook.databinding.EpisodeItemBinding
 
 class EpisodesAdapter(val onItemClick: (Episode) -> Unit): RecyclerView.Adapter<EpisodesAdapter.ViewHolder>() {

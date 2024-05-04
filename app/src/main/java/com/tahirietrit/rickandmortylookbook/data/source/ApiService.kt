@@ -3,6 +3,7 @@ package com.tahirietrit.rickandmortylookbook.data.source
 import Episode
 import com.tahirietrit.rickandmortylookbook.data.model.Character
 import com.tahirietrit.rickandmortylookbook.data.model.CharactersResponse
+import com.tahirietrit.rickandmortylookbook.data.model.Episodes
 import com.tahirietrit.rickandmortylookbook.data.model.SingleCharacterResopnese
 import retrofit2.Call
 import retrofit2.http.GET
@@ -24,5 +25,7 @@ interface ApiService {
 
     @GET("/api/episode/{episodeID}")
     fun Episode(@Path("episodeID") episodes: String): Call<Episode>
+    @GET("/api/episode")
+    fun getAllEpisodes(): Call<Episodes>
 
 }

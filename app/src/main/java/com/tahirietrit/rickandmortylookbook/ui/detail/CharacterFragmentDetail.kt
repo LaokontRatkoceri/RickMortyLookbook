@@ -11,11 +11,8 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.squareup.picasso.Picasso
-import com.tahirietrit.rickandmortylookbook.data.model.Character
 import com.tahirietrit.rickandmortylookbook.databinding.FragmentCharacterDetailBinding
-import com.tahirietrit.rickandmortylookbook.ui.detail.CharacterFragmentDetailDirections.EpisodeDetailAction
-import com.tahirietrit.rickandmortylookbook.ui.home.CharacterListAdapter
-import com.tahirietrit.rickandmortylookbook.ui.home.HomeFragmentDirections
+import com.tahirietrit.rickandmortylookbook.ui.episode.EpisodesAdapter
 import com.tahirietrit.rickandmortylookbook.util.CircularTransformation
 
 class CharacterFragmentDetail : Fragment() {

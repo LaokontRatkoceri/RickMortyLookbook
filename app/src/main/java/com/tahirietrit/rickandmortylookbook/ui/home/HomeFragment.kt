@@ -45,6 +45,8 @@ class HomeFragment : Fragment() {
         binding.characterList.adapter = adapter
 
 
+
+
     }
 
     private fun onCharacterClick(character: Character) {

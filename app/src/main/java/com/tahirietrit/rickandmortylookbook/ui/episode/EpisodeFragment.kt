@@ -1,4 +1,4 @@
-package com.tahirietrit.rickandmortylookbook.ui.detail
+package com.tahirietrit.rickandmortylookbook.ui.episode
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,11 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.tahirietrit.rickandmortylookbook.data.model.Character
 import com.tahirietrit.rickandmortylookbook.databinding.EpisodeDetailsBinding
 
-import com.tahirietrit.rickandmortylookbook.databinding.EpisodeItemBinding
-import com.tahirietrit.rickandmortylookbook.databinding.FragmentCharacterDetailBinding
 import com.tahirietrit.rickandmortylookbook.ui.home.CharacterListAdapter
-import com.tahirietrit.rickandmortylookbook.ui.home.HomeFragmentDirections
-import com.tahirietrit.rickandmortylookbook.util.CharAdapter
 
 
 class EpisodeFragment:Fragment() {

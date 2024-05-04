@@ -13,6 +13,9 @@
         <action
             android:id="@+id/openDetailFragment"
             app:destination="@id/fragmentDetail" />
+        <action
+            android:id="@+id/action_homeFragment_to_MenuDetail2"
+            app:destination="@id/MenuDetail" />
     </fragment>
     <fragment
         android:id="@+id/fragmentDetail"
@@ -28,11 +31,33 @@
     </fragment>
     <fragment
         android:id="@+id/EpisodeDetail"
-        android:name="com.tahirietrit.rickandmortylookbook.ui.detail.EpisodeFragment"
+        android:name="com.tahirietrit.rickandmortylookbook.ui.episode.EpisodeFragment"
         android:label="EpisodeFragment"
         tools:layout="@layout/episode_details" >
         <argument
             android:name="EpisodeId"
             app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/MenuDetail"
+        android:name="com.tahirietrit.rickandmortylookbook.ui.menu.MenuDetail"
+        android:label="MenuFragment"
+        tools:layout="@layout/menu_fragment"
+        >
+        <action
+            android:id="@+id/action_MenuDetail_to_homeFragment2"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_MenuDetail_to_EpisdoeList"
+            app:destination="@id/EpisdoeList" />
+    </fragment>
+    <fragment
+        android:id="@+id/EpisdoeList"
+        android:name="com.tahirietrit.rickandmortylookbook.ui.episode.EpisodeListFragment"
+        android:label="EpisodeListFragment"
+        tools:layout="@layout/episode_list"
+        >
+
     </fragment>
 </navigation>
