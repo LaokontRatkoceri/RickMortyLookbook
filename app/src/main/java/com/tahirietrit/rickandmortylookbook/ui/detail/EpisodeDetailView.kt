@@ -26,8 +26,8 @@ class EpisodeDetailView : ViewModel() {
 
                 val data = response.body()
                 episodeData.postValue(response.body()!!)
-                if (data != null && data.episode != null) {
-                    Episode(getCharacterPath(data.characters))
+                if (data != null && data.characters != null){
+                    getCharactersById(getCharacterPath(data.characters))
                 }
             }
 

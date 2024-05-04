@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.tahirietrit.rickandmortylookbook.data.model.Character
 import com.tahirietrit.rickandmortylookbook.databinding.EpisodeDetailsBinding
 
 import com.tahirietrit.rickandmortylookbook.databinding.EpisodeItemBinding
@@ -20,7 +21,7 @@ import com.tahirietrit.rickandmortylookbook.util.CharAdapter
 class EpisodeFragment:Fragment() {
     lateinit var binding: EpisodeDetailsBinding
     val viewModel: EpisodeDetailView by viewModels()
-    private lateinit var adapter: CharAdapter
+    private lateinit var adapter: CharacterListAdapter
     val args: EpisodeFragmentArgs by navArgs()
 
     override fun onCreateView(
@@ -52,10 +53,13 @@ class EpisodeFragment:Fragment() {
             }
         }
 
-        adapter = CharAdapter()
+        adapter = CharacterListAdapter(this::clickListener)
         binding.CastRecy.layoutManager = LinearLayoutManager(requireActivity())
         binding.CastRecy.adapter = adapter
 
+
+    }
+    fun clickListener(character: Character){
 
     }
 
