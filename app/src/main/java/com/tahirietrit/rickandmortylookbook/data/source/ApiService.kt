@@ -16,10 +16,13 @@ interface ApiService {
     @GET("/api/character/{characterId}")
     fun getSingleCharacter(@Path("characterId") characterId: String): Call<SingleCharacterResopnese>
 
-    @GET("/api/character/?name={characterName}")
-    fun getFilterSingleCharacter(@Path("characterName") characterName: String): Call<SingleCharacterResopnese>
+    @GET("/api/character/{characterId}")
+    fun getCharacters(@Path("characterId") characterId: String): Call<List<Character>>
 
     @GET("/api/episode/{episodeID}")
     fun getEpisode(@Path("episodeID") episodes: String): Call<List<Episode>>
+
+    @GET("/api/episode/{episodeID}")
+    fun Episode(@Path("episodeID") episodes: String): Call<Episode>
 
 }

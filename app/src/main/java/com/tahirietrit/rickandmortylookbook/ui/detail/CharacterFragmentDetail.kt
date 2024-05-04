@@ -1,5 +1,6 @@
 package com.tahirietrit.rickandmortylookbook.ui.detail
 
+import Episode
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.squareup.picasso.Picasso
 import com.tahirietrit.rickandmortylookbook.data.model.Character
 import com.tahirietrit.rickandmortylookbook.databinding.FragmentCharacterDetailBinding
+import com.tahirietrit.rickandmortylookbook.ui.detail.CharacterFragmentDetailDirections.EpisodeDetailAction
 import com.tahirietrit.rickandmortylookbook.ui.home.CharacterListAdapter
 import com.tahirietrit.rickandmortylookbook.ui.home.HomeFragmentDirections
 import com.tahirietrit.rickandmortylookbook.util.CircularTransformation
@@ -21,6 +23,7 @@ class CharacterFragmentDetail : Fragment() {
     private  lateinit var adapter: EpisodesAdapter
     lateinit var binding: FragmentCharacterDetailBinding
     val args: CharacterFragmentDetailArgs by navArgs()
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -63,10 +66,14 @@ class CharacterFragmentDetail : Fragment() {
                     adapter.episode = it
                 }
             }
-            adapter = EpisodesAdapter()
+            adapter = EpisodesAdapter(this::onEpisodeClick)
             binding.episodeRecycler.layoutManager = LinearLayoutManager(requireActivity())
             binding.episodeRecycler.adapter = adapter
         }
+    }
+    private fun onEpisodeClick(episode: Episode) {
+        val action = CharacterFragmentDetailDirections.EpisodeDetailAction(episode.id.toString())
+        findNavController().navigate(action)
     }
 
 }

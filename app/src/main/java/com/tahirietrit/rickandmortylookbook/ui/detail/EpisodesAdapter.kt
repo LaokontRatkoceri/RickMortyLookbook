@@ -7,10 +7,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.tahirietrit.rickandmortylookbook.data.model.Character
 import com.tahirietrit.rickandmortylookbook.databinding.EpisodeItemBinding
 
-class EpisodesAdapter: RecyclerView.Adapter<EpisodesAdapter.ViewHolder>() {
+class EpisodesAdapter(val onItemClick: (Episode) -> Unit): RecyclerView.Adapter<EpisodesAdapter.ViewHolder>() {
     var episode : List<Episode> = emptyList()
         set(value)  {
-            field =value
+            field = value
             notifyDataSetChanged()
         }
 
@@ -32,6 +32,9 @@ class EpisodesAdapter: RecyclerView.Adapter<EpisodesAdapter.ViewHolder>() {
             episodedateTextview.text = episode.airDate
             episodenameTextview.text = episode.name
             listEpisode.text = episode.episode
+            root.setOnClickListener{
+                onItemClick(episode)
+            }
         }
 
     }
