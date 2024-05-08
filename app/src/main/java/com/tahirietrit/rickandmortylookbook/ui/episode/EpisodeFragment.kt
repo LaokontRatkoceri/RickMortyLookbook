@@ -6,12 +6,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.tahirietrit.rickandmortylookbook.data.model.Character
 import com.tahirietrit.rickandmortylookbook.databinding.EpisodeDetailsBinding
+import com.tahirietrit.rickandmortylookbook.ui.detail.CharacterFragmentDetailDirections.EpisodeDetailAction
 
 import com.tahirietrit.rickandmortylookbook.ui.home.CharacterListAdapter
+import com.tahirietrit.rickandmortylookbook.ui.location.LocationFragmentDirections
 
 
 class EpisodeFragment:Fragment() {
@@ -35,7 +38,7 @@ class EpisodeFragment:Fragment() {
         viewModel.episodeData.observe(viewLifecycleOwner) {episode->
             with(binding){
                 episodeText.text = episode.name
-                DateNameText.text = "Date"
+                DateText.text = "Date"
                 dateTextView.text = episode.airDate
                 EpisodeText.text = "Episode"
                 EpisodeTextView.text = episode.episode
@@ -55,8 +58,9 @@ class EpisodeFragment:Fragment() {
 
 
     }
-    fun clickListener(character: Character){
-
+    private fun clickListener(character: Character){
+        val action = EpisodeFragmentDirections.actionEpisodeDetailToFragmentDetail(character.id.toString())
+        findNavController().navigate(action)
     }
 
 }

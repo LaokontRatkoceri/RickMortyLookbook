@@ -28,6 +28,9 @@
         <action
             android:id="@+id/EpisodeDetailAction"
             app:destination="@id/EpisodeDetail" />
+        <action
+            android:id="@+id/action_fragmentDetail_to_MenuDetail"
+            app:destination="@id/MenuDetail" />
     </fragment>
     <fragment
         android:id="@+id/EpisodeDetail"
@@ -37,6 +40,12 @@
         <argument
             android:name="EpisodeId"
             app:argType="string" />
+        <action
+            android:id="@+id/action_EpisodeDetail_to_fragmentDetail"
+            app:destination="@id/fragmentDetail" />
+        <action
+            android:id="@+id/action_EpisodeDetail_to_MenuDetail"
+            app:destination="@id/MenuDetail" />
     </fragment>
 
     <fragment
@@ -51,6 +60,9 @@
         <action
             android:id="@+id/action_MenuDetail_to_EpisdoeList"
             app:destination="@id/EpisdoeList" />
+        <action
+            android:id="@+id/action_MenuDetail_to_LocationList"
+            app:destination="@id/LocationList" />
     </fragment>
     <fragment
         android:id="@+id/EpisdoeList"
@@ -59,5 +71,41 @@
         tools:layout="@layout/episode_list"
         >
 
+        <action
+            android:id="@+id/action_EpisdoeList_to_EpisodeDetail"
+            app:destination="@id/EpisodeDetail" />
+        <action
+            android:id="@+id/action_EpisdoeList_to_MenuDetail"
+            app:destination="@id/MenuDetail" />
+    </fragment>
+    <fragment
+        android:id="@+id/LocationList"
+        android:name="com.tahirietrit.rickandmortylookbook.ui.location.LocationFragment"
+        android:label="LocationListFragment"
+        tools:layout="@layout/location_fragment"
+        >
+
+        <action
+            android:id="@+id/action_LocationList_to_LocationDetails"
+            app:destination="@id/LocationDetails" />
+        <action
+            android:id="@+id/action_LocationList_to_MenuDetail"
+            app:destination="@id/MenuDetail" />
+    </fragment>
+    <fragment
+        android:id="@+id/LocationDetails"
+        android:name="com.tahirietrit.rickandmortylookbook.ui.location.LocationDetails"
+        android:label="LocationDetailFragment"
+        tools:layout="@layout/location_details"
+        >
+        <argument
+            android:name="LocationId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_LocationDetails_to_fragmentDetail"
+            app:destination="@id/fragmentDetail" />
+        <action
+            android:id="@+id/action_LocationDetails_to_MenuDetail"
+            app:destination="@id/MenuDetail" />
     </fragment>
 </navigation>

@@ -24,7 +24,6 @@ import com.tahirietrit.rickandmortylookbook.ui.home.HomeFragmentDirections
 import com.tahirietrit.rickandmortylookbook.util.CircularTransformation
 
 class MenuDetail:Fragment() {
-    val viewModel : MenuViewModel by viewModels()
     lateinit var binding: MenuFragmentBinding
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -48,6 +47,10 @@ class MenuDetail:Fragment() {
             }
             binding.EpisodeTextView.setOnClickListener {
                 findNavController().navigate(R.id.action_MenuDetail_to_EpisdoeList)
+
+            }
+            binding.LocationTextView.setOnClickListener {
+                findNavController().navigate(R.id.action_MenuDetail_to_LocationList)
 
             }
 

@@ -1,69 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<androidx.core.widget.NestedScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_height="match_parent" android:layout_width="match_parent">
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        >
+        android:layout_width="match_parent">
         <TextView
             android:id="@+id/episodeText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
             android:textSize="32sp"
-            android:textAlignment="center"
             android:textColor="@color/black"
+            android:textAlignment="center"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             />
 
         <TextView
-            android:id="@+id/EpisodeText"
-            android:textStyle="bold"
-            android:textColor="@color/black"
+            android:id="@+id/TypeText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/episodeText"
             android:textSize="24sp"
-            app:layout_constraintEnd_toStartOf="@id/DateText"
+            android:textStyle="bold"
+
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toStartOf="@id/DimensionText"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="50dp"
             />
         <TextView
-            android:id="@+id/DateText"
+            android:id="@+id/DimensionText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/episodeText"
             android:textSize="24sp"
             android:textColor="@color/black"
             android:textStyle="bold"
-            android:layout_marginTop="10dp"
-            app:layout_constraintStart_toEndOf="@id/EpisodeText"
+
+            android:layout_marginTop="50dp"
+            app:layout_constraintStart_toEndOf="@id/TypeText"
             app:layout_constraintEnd_toEndOf="parent"
             />
         <TextView
-            android:id="@+id/EpisodeTextView"
-            app:layout_constraintTop_toBottomOf="@id/EpisodeText"
+            android:id="@+id/TypeTextView"
+            app:layout_constraintTop_toBottomOf="@id/TypeText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="@id/EpisodeText"
-            app:layout_constraintEnd_toEndOf="@id/EpisodeText"
+            app:layout_constraintStart_toStartOf="@id/TypeText"
+            app:layout_constraintEnd_toEndOf="@id/TypeText"
             android:layout_marginTop="10dp"
             android:textSize="14sp"
             />
 
 
         <TextView
-            android:id="@+id/dateTextView"
+            android:id="@+id/DimensionTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/DateText"
-            app:layout_constraintEnd_toEndOf="@id/DateText"
-            app:layout_constraintStart_toStartOf="@id/DateText"
+            app:layout_constraintTop_toBottomOf="@id/DimensionText"
+            app:layout_constraintEnd_toEndOf="@id/DimensionText"
+            app:layout_constraintStart_toStartOf="@id/DimensionText"
             android:layout_marginTop="10dp"
             android:textSize="14sp"
 
@@ -71,18 +71,17 @@
             />
         <TextView
             android:id="@+id/CastTextView"
-            android:textStyle="bold"
-            android:textColor="#8E8E93"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/dateTextView"
+            app:layout_constraintTop_toBottomOf="@id/DimensionTextView"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="50dp"
             android:textSize="20dp"
-            android:text="CAST"
+            android:text="Residence"
+            android:textStyle="bold"
             android:layout_marginStart="20dp"
 
-        />
+            />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/CastRecy"
@@ -95,7 +94,6 @@
 
 
             />
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

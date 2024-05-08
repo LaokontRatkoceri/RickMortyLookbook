@@ -11,8 +11,8 @@ import com.tahirietrit.rickandmortylookbook.databinding.EpisodeDetailsBinding
 import com.tahirietrit.rickandmortylookbook.databinding.EpisodeListBinding
 import com.tahirietrit.rickandmortylookbook.databinding.ItemCharacterListBinding
 import com.tahirietrit.rickandmortylookbook.ui.home.CharacterListAdapter
-//val onItemClick: (Episode) -> Unit
-class EpisodeListAdapter :
+//
+class EpisodeListAdapter(val onItemClick: (EpisodesRes) -> Unit) :
     RecyclerView.Adapter<EpisodeListAdapter.ViewHolder>() {
 
     var episodes: List<EpisodesRes> = emptyList()
@@ -38,6 +38,9 @@ class EpisodeListAdapter :
             episodenameTextview.text = episodes.name
             episodedateTextview.text = episodes.airDate
             episodeText.text = episodes.episode
+            root.setOnClickListener {
+                onItemClick(episodes)
+            }
         }
 
     }

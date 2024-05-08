@@ -4,7 +4,11 @@ import Episode
 import com.tahirietrit.rickandmortylookbook.data.model.Character
 import com.tahirietrit.rickandmortylookbook.data.model.CharactersResponse
 import com.tahirietrit.rickandmortylookbook.data.model.Episodes
+import com.tahirietrit.rickandmortylookbook.data.model.Location
+import com.tahirietrit.rickandmortylookbook.data.model.LocationRes
+import com.tahirietrit.rickandmortylookbook.data.model.Locations
 import com.tahirietrit.rickandmortylookbook.data.model.SingleCharacterResopnese
+import com.tahirietrit.rickandmortylookbook.data.model.SingleLocation
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -27,5 +31,10 @@ interface ApiService {
     fun Episode(@Path("episodeID") episodes: String): Call<Episode>
     @GET("/api/episode")
     fun getAllEpisodes(): Call<Episodes>
+
+    @GET("/api/location")
+    fun getAllLocations(): Call<LocationRes>
+    @GET("/api/location/{locationID}")
+    fun getLocation(@Path("locationID") locationID:String): Call<SingleLocation>
 
 }

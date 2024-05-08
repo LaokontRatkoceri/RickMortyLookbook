@@ -10,7 +10,9 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation.findNavController
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.AppBarConfiguration
 import com.tahirietrit.rickandmortylookbook.data.model.Character
 import com.tahirietrit.rickandmortylookbook.databinding.MenuFragmentBinding
 import com.tahirietrit.rickandmortylookbook.ui.detail.CharacterFragmentDetail
@@ -31,6 +33,7 @@ class MainActivity : AppCompatActivity() {
         findViewById<ImageButton>(R.id.menu_button)
             .setOnClickListener {
             findNavController(R.id.nav_host_fragment).navigate(R.id.action_homeFragment_to_MenuDetail2)
+
         }
 
 
