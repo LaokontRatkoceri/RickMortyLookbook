@@ -59,6 +59,7 @@ class LocationDetails:Fragment() {
         binding.CastRecy.layoutManager = LinearLayoutManager(requireActivity())
         binding.CastRecy.adapter = adapter
 
+        viewModel
     }
     private fun clickListener(character: Character){
         val action = LocationDetailsDirections.actionLocationDetailsToFragmentDetail(character.id.toString())

@@ -32,11 +32,38 @@ class MainActivity : AppCompatActivity() {
         }
         findViewById<ImageButton>(R.id.menu_button)
             .setOnClickListener {
-            findNavController(R.id.nav_host_fragment).navigate(R.id.action_homeFragment_to_MenuDetail2)
+//            findNavController(R.id.nav_host_fragment).navigate(R.id.action_homeFragment_to_MenuDetail2)
 
+                val navController = findNavController(R.id.nav_host_fragment)
+
+                // Check the current destination and navigate accordingly
+                when (navController.currentDestination?.id) {
+                    R.id.homeFragment -> {
+                        navController.navigate(R.id.action_homeFragment_to_MenuDetail2)
+                    }
+                    R.id.EpisdoeList -> {
+                        navController.navigate(R.id.action_EpisdoeList_to_MenuDetail)
+                    }
+                    R.id.EpisodeDetail -> {
+                        navController.navigate(R.id.action_EpisodeDetail_to_MenuDetail)
+                    }
+                    R.id.LocationList -> {
+                        navController.navigate(R.id.action_LocationList_to_MenuDetail)
+                    }
+                    R.id.LocationDetails -> {
+                        navController.navigate(R.id.action_LocationDetails_to_MenuDetail)
+                    }
+                    R.id.fragmentDetail -> {
+                        navController.navigate(R.id.action_fragmentDetail_to_MenuDetail)
+                    }
+
+                }
         }
 
 
     }
+
+
+
 }
 
